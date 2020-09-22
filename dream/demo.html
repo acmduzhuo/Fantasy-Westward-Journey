@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>梦幻西游-独酌</title>
+
+    <style>
+        body{
+            margin: 0;
+            background-image: url("images/bg.jpg");
+            animation: bg 1800s infinite;
+        }
+        .wrap{
+            position: relative;
+            top: 350px;
+            /* 相对定位 */
+            width: 100%;
+            height: 200px;
+            /* background-color: aqua; */
+        }
+        .content{
+            width: 180px;
+            height: 180px;
+            /* background-color: brown; */
+        }
+
+        /* 选择第几个子元素 */
+        .content:nth-child(1){
+            position: absolute;
+            /* 参考父元素，如果父元素没有相对定位，则会依赖浏览器？更高一级 */
+            /* 绝对定位 */
+            left:300px;
+            background-image: url("images/1.png");
+            /* 背景图片 路径 */
+            animation: run 1s steps(8) infinite;
+            /* 动画加到类中 */
+        }
+        .content:nth-child(2){
+            background-image: url("images/2.png");
+            position: absolute;
+            left:470px;
+            /* 背景图片 路径 */
+            animation: run 1s steps(8) infinite;
+        }
+        .content:nth-child(3){
+            background-image: url("images/3.png");
+            /* 背景图片 路径 */
+            position: absolute;
+            left:640px;
+            animation: ts 1s steps(8) infinite;
+        }
+        .content:nth-child(4){
+            background-image: url("images/4.png");
+            position: absolute;
+            left:810px;
+            animation: ss 1s steps(8) infinite;
+            /* 背景图片 路径 */
+        }
+        /* 关键字 动画名称 */
+        @keyframes run{
+            from{
+                /* 背景图片定位 原点开始 */
+                background-position: 0 0 ;
+            }
+            to{
+                background-position: -1600px 0;
+            }
+        }
+        @keyframes ts{
+            from{
+                /* 背景图片定位 原点开始 */
+                background-position: 0 0 ;
+            }
+            to{
+                background-position: -1360px 0;
+            }
+        }
+        @keyframes ss{
+            from{
+                /* 背景图片定位 原点开始 */
+                background-position: 0 0 ;
+            }
+            to{
+                background-position: -1680px 0;
+            }
+        }
+        @keyframes bg{
+            from{
+                /* 背景图片定位 原点开始 */
+                background-position: 0 0 ;
+            }
+            to{
+                background-position: 18000px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+    </div>
+</body>
+</html>
+
+<!-- 父相子绝 -->
